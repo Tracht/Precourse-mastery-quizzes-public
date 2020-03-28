@@ -1,0 +1,5 @@
+.
+
+Finished in 0.00726 seconds (files took 0.17492 seconds to load)
+1 example, 0 failures
+
