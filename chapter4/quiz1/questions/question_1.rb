@@ -1,3 +1,4 @@
+#!/Users/marijatrachtenberg/.rvm/rubies/ruby-2.6.5/bin/ruby
 # Write a program that:
 # * Calculates the "FizzBuzz sequence" from 1 to 20.
 #   * For each integer between 1 and 20 (inclusive).
@@ -7,3 +8,16 @@
 #       `FizzBuzz`.
 #     * If the number is divisible by neither 3 or 5, keep the number.
 # * `puts`es these "FizzBuzz sequence" entries, one per line.
+n = 0
+while n < 20 do 
+  n = n + 1
+  if (n % 3 == 0 && n % 5 == 0)
+    puts "FizzBuzz"
+  elsif n % 3 == 0
+    puts "Fizz"
+  elsif n % 5 == 0
+    puts "Buzz"
+  else
+    puts n 
+  end
+end
