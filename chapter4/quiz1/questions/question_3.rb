@@ -10,7 +10,6 @@
 count = 0
 prev1 = 0
 prev2 = 1
-
 array = [0, 1]
 
 while count < 18
