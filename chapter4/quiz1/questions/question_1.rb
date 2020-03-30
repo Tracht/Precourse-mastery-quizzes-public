@@ -1,4 +1,3 @@
-#!/Users/marijatrachtenberg/.rvm/rubies/ruby-2.6.5/bin/ruby
 # Write a program that:
 # * Calculates the "FizzBuzz sequence" from 1 to 20.
 #   * For each integer between 1 and 20 (inclusive).

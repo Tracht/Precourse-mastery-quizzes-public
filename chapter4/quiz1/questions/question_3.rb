@@ -1,4 +1,3 @@
-#!/Users/marijatrachtenberg/.rvm/rubies/ruby-2.6.5/bin/ruby
 # Write a program that:
 # * Calculates the first 20 Fibonacci numbers.
 #   * The first Fibonacci number is 0.
