@@ -13,7 +13,7 @@ prev2 = 1
 
 array = [0, 1]
 
-while count < 20
+while count < 18
   count = count + 1
   current = prev1 + prev2
   array.push(current)
