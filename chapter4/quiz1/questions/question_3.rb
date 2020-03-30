@@ -20,4 +20,4 @@ while count < 18
   prev2 = current
 end
 
-array.each { |x| puts x } 
+array.each { |x| puts x 
