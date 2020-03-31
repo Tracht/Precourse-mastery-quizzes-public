@@ -22,7 +22,22 @@
 #   the user input.  You shouldn't need to enter any input manually.
 #   If the tests hang when you run them, it probably means your code
 #   doesn't work correctly, yet.
-# 
+#
 # * Note: To pass the tests, you'll need to `puts` exactly what's
 #   expected. Watch out for stray punctuation, capital letters, etc.
+location = "passage"
 
+loop do
+  puts "Choose a direction: north or south"
+  input = gets.chomp
+  if location == "passage" && input == "north"
+    puts "You are in a scary cave."
+    location = "cave"
+  elsif location == "cave" && input == "south"
+    location = "passage"
+    puts "You are in a scary passage."
+  elsif location == "cave" && input == "north"
+    puts "You walk into sunlight."
+    break
+  end
+end

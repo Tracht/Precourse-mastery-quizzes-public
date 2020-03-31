@@ -26,4 +26,15 @@
 
 # * Note: You can assume that the user will always enter either an
 #   integer or `stop`.
+stop = false
+sum = 0
 
+until stop == true
+  puts "Give me a number"
+  input = gets.chomp!
+  sum += input.to_i
+  if input == "stop"
+    puts sum
+    stop = true
+  end
+end
