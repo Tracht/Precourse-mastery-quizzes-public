@@ -61,6 +61,80 @@
 #   neither
 #   You survived!
 #   ```
-
 river = "-----,--C--,CC-CC,CC-CC"
+river_crossings = 0
 
+array = river.split(",")
+array[0] = "--P--"
+puts array
+puts "Type left, right or neither"
+input = gets.chomp
+river_crossings += 1
+
+if river_crossings == 1 && input == "neither"
+  puts "You were eaten."
+elsif river_crossings == 1 && input == "right"
+  array[0] = "-----"
+  array[1] = "--CP-"
+  river_crossings += 1
+  puts array
+  puts "Type left, right or neither"
+  input = gets.chomp
+  if river_crossings == 2 && input == "right" || input == "neither"
+    puts "You were eaten."
+  elsif river_crossings == 2 && input == "left"
+    array[1] = "--C--"
+    array[2] = "CCPCC"
+    river_crossings += 1
+    puts array
+    puts "Type left, right or neither"
+    input = gets.chomp
+    if river_crossings == 3 && input == "left" || input == "right"
+      puts "You were eaten."
+    elsif river_crossings == 3 && input == "neither"
+      array[2] = "CC-CC"
+      array[3] = "CCPCC"
+      river_crossings += 1
+      puts array
+      puts "Type left, right or neither"
+      input = gets.chomp
+      if river_crossings == 4 && input == "left" || input == "right"
+        puts "You were eaten."
+      elsif river_crossings == 4 && input == "neither"
+        puts "You survived!"
+      end
+    end
+  end
+elsif river_crossings == 1 and input == "left"
+  array[0] = "-----"
+  array[1] = "-PC--"
+  river_crossings += 1
+  puts array
+  puts "Type left, right or neither"
+  input = gets.chomp
+  if river_crossings == 2 && input == "left" || input == "neither"
+    puts "You were eaten."
+  elsif river_crossings == 2 && input == "right"
+    array[1] = "--C--"
+    array[2] = "CCPCC"
+    river_crossings += 1
+    puts array
+    puts "Type left, right or neither"
+    input = gets.chomp
+    if river_crossings == 3 && input == "left" || input == "right"
+      puts "You were eaten."
+    elsif river_crossings == 3 && input == "neither"
+      array[2] = "CC-CC"
+      array[3] = "CCPCC"
+      river_crossings += 1
+      puts array
+      puts "Type left, right or neither"
+      input = gets.chomp
+      if river_crossings == 4 && input == "left" || input == "right"
+        puts "You were eaten."
+      elsif river_crossings == 4 && input == "neither"
+        puts "You survived!"
+      end
+    end
+  end
+end

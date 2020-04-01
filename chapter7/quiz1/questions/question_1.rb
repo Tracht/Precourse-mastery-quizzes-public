@@ -17,5 +17,11 @@
 #   ```
 #
 # * Note: You can assume the user will only enter integers separated
-#   by commas with no spaces.
-
+# "n" is NOT printed
+puts "provide a list of numbers"
+input = gets.chomp.split(",")
+input.each do |n|
+  bar = ""
+  n.to_i.times { bar += "-" }
+  puts bar
+end
