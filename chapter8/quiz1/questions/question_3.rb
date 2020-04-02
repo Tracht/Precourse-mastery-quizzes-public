@@ -35,4 +35,40 @@ people = [
   { "name" => "Awad", "sport" => "weightlifting", "fruit" => "kiwi" },
   { "name" => "Will", "sport" => "cycling", "fruit" => "blackberry" }
 ]
+puts "Enter category to group people by"
+input = gets.chomp
+people_list = Array.new
+sports = Array.new
+fruits = Array.new
 
+people.each do |x|
+  sports.push(x["sport"])
+  fruits.push(x["fruit"])
+end
+sports.uniq
+fruits.uniq
+
+if input == "sport"
+  sports.each do |x|
+    people.each do |y|
+      y.each do |_k, v| # _k indicates it won't be used
+        if x == v
+          people_list.push(x)
+          people_list.push(y["name"])
+        end
+      end
+    end
+  end
+elsif input == "fruit"
+  fruits.each do |i|
+    people.each do |j|
+      j.each do |_m, n| # _m indicates it won't be used
+        if i == n
+          people_list.push(i)
+          people_list.push(j["name"])
+        end
+      end
+    end
+  end
+end
+puts people_list.uniq

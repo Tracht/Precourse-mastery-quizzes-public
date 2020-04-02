@@ -16,5 +16,24 @@
 # * Note: You can assume that the user will enter a word that only
 #   contains letters and blanks.  You can assume the word will be in
 #   uppercase.
+puts "Enter a word"
+word = gets.chomp.upcase.split("")
 
+score = Array.new
+scoring = {
+  0 => [" "],
+  1 => ["E", "A", "I", "O", "N", "R", "T", "L", "S", "U"],
+  2 => ["D", "G"],
+  3 => ["B", "C", "M", "P"],
+  4 => ["F", "H", "V", "W", "Y"],
+  5 => ["K"],
+  8 => ["J", "X"],
+  10 => ["Q", "Z"],
+}
 
+word.each do |x|
+  scoring.each do |k, v|
+    score.push(k) if v.include?(x)
+  end
+end
+puts score.sum

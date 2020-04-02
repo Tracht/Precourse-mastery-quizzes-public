@@ -19,7 +19,6 @@
 # Note: You can assume that, when asked for a category, the user will
 # only enter either `sport` or `fruit`.  The user might enter a
 # category value that no person has (e.g. `mango`).
-
 people = [
   { "name" => "Mary", "sport" => "squash", "fruit" => "blackberry" },
   { "name" => "Lauren", "sport" => "squash", "fruit" => "orange" },
@@ -30,3 +29,18 @@ people = [
   { "name" => "Will", "sport" => "cycling", "fruit" => "blackberry" }
 ]
 
+puts "Enter what category to search"
+category = gets.chomp
+puts "Enter what value to search for"
+value = gets.chomp
+names = Array.new
+
+people.select do |x|
+  if x[category] == value
+    names = names.push(x["name"])
+  else
+    print ""
+  end
+end
+
+puts names
