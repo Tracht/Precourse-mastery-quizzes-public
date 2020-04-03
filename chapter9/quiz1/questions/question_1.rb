@@ -51,11 +51,44 @@
 #   exit a while loop early, use the `break` keyword.
 
 # You don't need to change this method!
-def random_card
-  cards = ["two", "three", "four", "five", "six", "seven",
-           "eight", "nine", "ten",
-           "jack", "queen", "king", "ace"]
+$cards = { "two" => 2, "three" => 3, "four" => 4, "five" => 5,
+            "six" => 6, "seven" => 7, "eight" => 8, "nine" => 9,
+            "ten" => 10, "jack" => 10, "queen" => 10, "king" => 10,
+            "ace" => 11 }
+$hand = Array.new
 
-  cards[rand(13)]
+def random_card
+  r = rand(13)
+  $cards.keys[r]
 end
 
+def score(hand_values)
+  hand_values.map { |card_name| $cards[card_name] } .sum
+end
+
+def move
+  input = ""
+  while input != "hit" && input != "stick"
+    puts "Hit or stick."
+    input = gets.chomp
+  end
+  input
+end
+
+def run_game
+  while player_move = move()
+    if player_move == "stick"
+      puts "You scored: #{score($hand)}"
+      break
+    elsif player_move == "hit"
+      $hand.push(random_card())
+      if score($hand) <= 21
+        puts "Score so far: #{score($hand)}"
+      elsif score($hand) > 21
+        puts "You busted with: #{score($hand)}"
+        break
+      end
+    end
+  end
+  $hand.clear
+end
