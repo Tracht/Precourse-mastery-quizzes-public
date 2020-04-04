@@ -22,3 +22,29 @@
 
 # * Note: When you run the automated tests, make sure to remove from
 #   the top level of the file any calls to any methods.
+
+class Todo
+
+  def initialize(todo)
+    @todo = todo
+  end
+
+  def text
+    @text = @todo
+  end
+
+end
+
+class TodoList
+  def initialize
+    @todo_list = []
+  end
+
+  def add(todo)
+    @todo_list.push(todo)
+  end
+
+  def print
+    @todo_list.each { |todo| puts "* #{todo.text}" }
+  end
+end
