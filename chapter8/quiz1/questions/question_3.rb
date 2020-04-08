@@ -37,7 +37,7 @@ people = [
 ]
 puts "Enter category to group people by"
 input = gets.chomp
-people_list = Array.new
+members_list = Array.new
 sports = Array.new
 fruits = Array.new
 
@@ -53,8 +53,8 @@ if input == "sport"
     people.each do |y|
       y.each do |_k, v| # _k indicates it won't be used
         if x == v
-          people_list.push(x)
-          people_list.push(y["name"])
+          members_list.push(x)
+          members_list.push(y["name"])
         end
       end
     end
@@ -64,11 +64,11 @@ elsif input == "fruit"
     people.each do |j|
       j.each do |_m, n| # _m indicates it won't be used
         if i == n
-          people_list.push(i)
-          people_list.push(j["name"])
+          members_list.push(i)
+          members_list.push(j["name"])
         end
       end
     end
   end
 end
-puts people_list.uniq
+puts members_list.uniq

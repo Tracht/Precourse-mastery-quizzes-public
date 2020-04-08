@@ -35,9 +35,9 @@ puts "Enter what value to search for"
 value = gets.chomp
 names = Array.new
 
-people.select do |x|
-  if x[category] == value
-    names = names.push(x["name"])
+people.select do |person|
+  if person[category] == value
+    names = names.push(person["name"])
   else
     print ""
   end
